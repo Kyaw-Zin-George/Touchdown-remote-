@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
+
+//Data
+//color
+let colorBackground : Color = Color("ColorBackground")
+let colorGray: Color = Color(UIColor.systemGray)
+//layout
+//ux
+//api
+//image
+//font
+//string
+//misc
