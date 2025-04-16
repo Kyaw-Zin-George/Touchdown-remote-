@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct FeatureItemView: View {
+    //MARK: - Property
+    let player: Player
+    //MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(player.image)
+            .resizable()
+            .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 
 #Preview {
-    FeatureItemView()
+    FeatureItemView(player: players[2])
+        .padding()
 }
