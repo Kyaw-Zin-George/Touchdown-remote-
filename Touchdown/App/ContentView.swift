@@ -13,17 +13,33 @@ struct ContentView: View {
     //MARK: - body
     
     var body: some View {
-        VStack (spacing: 0){
-            NavigationBarView()
-                .padding(.horizontal, 15)
-                .padding(.bottom)
-                .background(Color.white)
-                .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-            Spacer()
-            FooterView()
-                .padding(.horizontal)
+        GeometryReader { geo in
+            ZStack {
+                VStack (spacing: 0){
+                    NavigationBarView()
+                        .padding(.horizontal, 15)
+                        .padding(.bottom)
+                        .background(Color.white)
+                        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                    
+                    ScrollView(.vertical,showsIndicators: false, content: {
+                        
+                        VStack(spacing: 0){
+                            FeatureTabView()
+                              .frame(width: geo.size.width * 0.9,height: geo.size.height * 0.9)
+                                .padding(.vertical)
+                            
+                            FooterView()
+                                .padding(.horizontal)
+                        }//vstack
+                    })//scroll view
+                    
+                    
+                }
+                .background(colorBackground.ignoresSafeArea(.all, edges: .all))
+            }
+            .ignoresSafeArea(.all,edges: .top)
         }
-        .background(colorBackground.ignoresSafeArea(.all, edges: .all))
     }
 }
 
