@@ -26,8 +26,9 @@ struct ContentView: View {
                         
                         VStack(spacing: 0){
                             FeatureTabView()
-                              .frame(width: geo.size.width * 0.9,height: geo.size.height * 0.9)
+                              .frame(width: geo.size.width * 0.9,height: 200)
                                 .padding(.vertical)
+                            CategoryGridView()
                             
                             FooterView()
                                 .padding(.horizontal)
