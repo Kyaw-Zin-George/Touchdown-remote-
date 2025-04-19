@@ -16,6 +16,7 @@ struct ContentView: View {
         GeometryReader { geo in
             ZStack {
                 VStack (spacing: 0){
+                    //Navigation bar
                     NavigationBarView()
                         .padding(.horizontal, 15)
                         .padding(.bottom)
@@ -31,12 +32,13 @@ struct ContentView: View {
                             CategoryGridView()
                             
                             TitileView(title: "Helment")
-                            LazyVGrid(columns: gridLayout,spacing: 15) {
-                                ForEach(products){ product in
-                                ProductItemView(product: product)
-                                }
-                            }
-                            .padding(15)
+                            
+                            ProductGridView()
+                            
+                            TitileView(title: "Brands")
+                            
+                            BrandGridView()
+                            
                             FooterView()
                                 .padding(.horizontal)
                         }//vstack
@@ -46,7 +48,7 @@ struct ContentView: View {
                 }
                 .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             }
-            .ignoresSafeArea(.all,edges: .top)
+            //.ignoresSafeArea(.all,edges: .top)
         }
     }
 }
@@ -54,3 +56,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
