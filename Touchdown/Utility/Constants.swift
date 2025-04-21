@@ -24,6 +24,7 @@ var gridLayout: [GridItem] {
     return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
 }
 //ux
+let feedback = UIImpactFeedbackGenerator(style:.medium)
 //api
 //image
 //font
